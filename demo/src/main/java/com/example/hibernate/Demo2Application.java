@@ -16,12 +16,14 @@ public class Demo2Application {
 
     @RequestMapping("/get")
     @Transactional
-    public City getP(String name){
-        City city = new City();
-        city.setName("abc");
-        city.setProvince("abc");
-        dao.save(city);
-        City person = dao.findByName(name).get(0);
+    public City getP(long id){
+//        City city = new City();
+//        city.setName("abc");
+//        city.setProvince("abc");
+//        dao.save(city);
+        int i = dao.updateName("你好",2);
+        dao.deleteCity(2L);
+        City person = dao.getCity(id);
         return person;
     }
     @RequestMapping("/")
