@@ -15,6 +15,7 @@ public class Demo2Application {
     PersonDao dao;
 
     @RequestMapping("/get")
+    @Transactional
     public City getP(String name){
         City city = new City();
         city.setName("abc");
